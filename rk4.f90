@@ -56,22 +56,22 @@ do j=1,n
 t = dfloat(j)*h
 
     call RHS(ne,w,y,t,r)
-		do k=1,ne
+	do k=1,ne
 		k1(k) = h*r(k)      
     	end do
 	
     call RHS(ne,w,y+k1/2.0d0,t+h/2.0d0, r)
-		do k=1,ne
+	do k=1,ne
 		k2(k) = h*r(k)      
     	end do
 
     call RHS(ne,w,y+k2/2.0d0,t+h/2.0d0,r)
-		do k=1,ne
+	do k=1,ne
 		k3(k) = h*r(k)      
     	end do
 
     call RHS(ne,w,y+k3,t+h,r)
-		do k=1,ne
+	do k=1,ne
 		k4(k) = h*r(k)      
     	end do
     
